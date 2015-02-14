@@ -24,6 +24,7 @@ Set up your gallery:
 	<a href="path/to/image4.jpg"><img src="path/to/image4_thumbnail.jpg" /></a>
 	<a href="path/to/image5.jpg"><img src="path/to/image5_thumbnail.jpg" /></a>
 	<a href="path/to/image6.jpg"><img src="path/to/image6_thumbnail.jpg" /></a>
+	<a href="path/to/image7.jpg" data-href="this/link/is/prefered/than/the/href/attribute/"><img src="path/to/image7_thumbnail.jpg" /></a>
 </div>
 ```
 
@@ -256,15 +257,16 @@ foo.poptrox({
 	popupNavPreviousSelector:	'.nav-previous',// (Advanced) Popup Nav Previous selector
 	popupNavNextSelector:		'.nav-next',	// (Advanced) Popup Nav Next selector
 	onPopupClose:				null,			// Called when popup closes
-	onPopupOpen:				null			// Called when popup opens
+	onPopupOpen:				null,			// Called when popup opens
+	useOnlyDataHref:			false			// If it will use only data-href instead href attribute
 });
 ```
 
 ## License
 
-jquery.poptrox.js is released under the MIT license.
+This fork of jquery.poptrox.js is released under the MIT license.
 
-Copyright © n33
+Copyright Â© ajabep
 
 Permission is hereby granted, free of charge, to any person obtaining a
 copy of this software and associated documentation files (the
