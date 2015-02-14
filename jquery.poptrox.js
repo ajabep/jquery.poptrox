@@ -794,7 +794,7 @@ fork of the jquery.poptrox project of n33 */
 						}
 
 					if (x.type != 'ignore')
-						queue.push(x);
+						queue[index] = x;
 					
 					i.attr('title', '');
 					
