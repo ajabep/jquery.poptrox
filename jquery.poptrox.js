@@ -1,4 +1,5 @@
-/* jquery.poptrox.js v2.5.0 | (c) n33 | n33.co | MIT licensed */
+/*! jquery.poptrox.js v2.6.0 | (c) ajabep | MIT licensed
+fork of the jquery.poptrox project of n33 */
 
 (function($) {
 
@@ -68,7 +69,9 @@
 					popupNavPreviousSelector:		'.nav-previous',			// (Advanced) Popup Nav Previous selector
 					popupNavNextSelector:			'.nav-next',				// (Advanced) Popup Nav Next selector
 					onPopupClose:					null,						// Called when popup closes
-					onPopupOpen:					null						// Called when popup opens
+					onPopupOpen:					null,						// Called when popup opens
+
+					useOnlyDataHref:				false						// If it will use only data-href instead href attribute
 
 				}, options);
 				
@@ -586,15 +589,26 @@
 				
 				$this.find(settings.selector).each(function(index) {
 					
-					var x, tmp, a = $(this), i = a.find('img'), data = a.data('poptrox');
+					var x,
+						tmp,
+						a = $(this),
+						i = a.find('img'),
+						data = a.data('poptrox'),
+						href;
+					
+					if ( settings.useOnlyDataHref )
+						href = a.attr('data-href');
+					else
+						href = a.attr('data-href') || a.attr('href');
 
-					// No href? Bail.
-						if (!a.attr('href'))
+
+					// No href or data-href ? Bail.
+						if (typeof href == "undefined")
 							return;
 
 					x = {
 
-						src:			a.attr('href'),
+						src:			href,
 						captionText:	i.attr('title'),
 						width:			a.attr('width'),
 						height:			a.attr('height'),
