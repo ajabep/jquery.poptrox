@@ -757,7 +757,7 @@ fork of the jquery.poptrox project of n33 */
 
 							case 'youtube':
 								x.object = $('<iframe src="" frameborder="0" allowfullscreen="1"></iframe>');
-								x.src = x.prefix + '://www.youtube.com/embed/' + tmp[2];
+								x.src = x.prefix + '://www.youtube-nocookie.com/embed/' + tmp[2];
 								
 								break;
 
